@@ -1,10 +1,10 @@
 # dependencies (bun install)
 node_modules
 others
+videos/**
+!videos/.gitkeep
 
 user_data
-
-videos/**/images
 
 # output
 out
