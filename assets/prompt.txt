@@ -1,0 +1,60 @@
+You are going to generate image prompts for a YouTube script, one image prompt for every
+timestamp in the script.
+
+Your job is to read the script carefully and create a separate image generation prompt for each
+timestamp. If the script has timestamps like 0:00, 0:03, 0:07, 0:10, 0:12,
+and 0:20, then you must generate one image for each of those timestamps.
+
+Each image must visually illustrate what the narrator is saying at that exact
+moment. The image should make sense with the story, the emotion, and the idea
+being explained. Do not create random images. Every image should feel like a
+simple visual explanation of the current line in the script.
+And each image should be consistent with the previous image.
+Characters should be in the right size and proportion to the scene.
+
+MAIN CHARECTER:
+the main charecter is a charecter by whom a story is played.
+
+MAIN CHARECTER STYLES:
+circle white head, 5 line hair, medium size eyes with dotted pupil, wrinkles under eyes, white full sleeve tshirt, blue jeens, black shoes, simple expressions, outlined character style. (ref: ./assets/main-charecter.png)
+
+OTHER CHARECTER STYLE:
+If there is any other charecter or animals then follow the instructions below
+- side charecters: all sidecharecters will look the same like our main charecter except the wrinkle under the eyes.
+- you can change appearance of some charecters to emphasize their charecter based on their proffession, age, or timeline.
+
+STYLE REQUIREMENTS:
+The image style must look like a clean, professional 2D vector illustration. outlined charecters. no 3d elements.
+
+VISUAL LANGUAGE & TEXT:
+- Clean, minimalist compositions that focus on the characters and background elements
+- title text should be all uppercase
+- and caption text should be in comic sans font.
+- 2d vector art with black outline style
+- no white borders or white spaces
+
+OTHER INSTRUCTION:
+- when casually talking without any context of the script like asking to subscribe or something else not quite related to the story of the script then use the default background which is yellow background with checkers floor.
+- when using text as title then use it in uppercase and comic sans font
+- when using text for saying something then use it in a text bubble above the charecter
+- use less texts
+- when the charecter is teaching something educational and we don't find any proper styling to
+
+FORMAT REQUIREMENTS:
+Every image must be horizontal 16:9 for YouTube video format.
+Generate each image as a wide YouTube frame, not vertical, not square.
+The image must be clean, readable, and centered. Do not crop important objects. Leave enough space around the characters and objects. Avoid glitches, broken anatomy, messy overlapping objects, or weird extra details.
+
+IMPORTANT:
+For every timestamp, create a different image that matches the script at that moment. The images should feel like they belong in the same video and same drawing style. Make them look like clean, neat. Generate a image every be every 1s or 2s (scene aware, paragraph aware). Try creating images frequently based on sentense or context. If you see no change between the previous 3s generated image and the next image then just reference the previous image and change some subtle things like talking mouth, moving hand guestures, adding texts, removing texts, or moving places of other items etc.
+
+GENERATION STEPS:
+- you will generate the images one by one
+- if there will be multiple images in one scene then we will reference the previous generated image to the ai to have more consistancy
+- and you should reference the main charecter if any image have the main charecter, this will confirm charecter consistancy
+- write down prompt for all the images in `generation.jsonl` file relative to the script file provided which will look like this {timestamp: string; prompt: string; shouldIncludePreviousGeneration: boolean; shouldIncludeMainCharecterImage: boolean}
+- if you set shouldIncludePreviousGeneration to true then we can just prompt the adjustments
+- the timestamp in the schema is the start timestamp, and format should be MM:SS
+
+Here is the script with timestamps. Generate one image for each timestamp:
+{{ SCRIPT }}

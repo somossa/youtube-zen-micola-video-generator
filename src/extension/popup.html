@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 220px; padding: 16px; font-family: -apple-system, sans-serif; margin: 0; }
+    h3 { margin: 0 0 8px; font-size: 14px; }
+    p { margin: 4px 0; font-size: 12px; }
+    .ok { color: #0a0; }
+    .err { color: #a00; }
+  </style>
+</head>
+<body>
+  <h3>Higgsfield Controller</h3>
+  <p>Server: <span id="status" class="err">disconnected</span></p>
+  <script>
+    chrome.runtime.sendMessage({ type: 'getStatus' }, (r) => {
+      const el = document.getElementById('status');
+      if (r && r.connected) {
+        el.textContent = 'connected';
+        el.className = 'ok';
+      }
+    });
+  </script>
+</body>
+</html>
