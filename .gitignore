@@ -3,6 +3,7 @@ node_modules
 others
 videos/**
 !videos/.gitkeep
+LIST.md
 
 user_data
 
